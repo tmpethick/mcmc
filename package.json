@@ -1,0 +1,85 @@
+{
+  "name": "mcmc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Thomas Pethick <tmpethick@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:debug": "node --debug-brk ./node_modules/.bin/jest --runInBand",
+    "examples": "jest --config=./examples/jest.config.json",
+    "examples:coal": "yarn examples -- --testNamePattern \"examples coal\"",
+    "examples:linear": "yarn examples -- --testNamePattern \"examples linearRegression\"",
+    "examples:height": "yarn examples -- --testNamePattern \"examples height\"",
+    "start": "webpack-dev-server --inline",
+    "build": "webpack -p",
+    "format": "prettier-eslint --write"
+  },
+  "lint-staged": {
+    "{src,examples,experiments,__tests__}/**/*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
+  },
+  "devDependencies": {
+    "@effectfuljs/babel-preset-env": "^0.0.1",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
+    "babel-preset-env": "^1.3.3",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.23.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.46.0",
+    "jest": "^19.0.2",
+    "prettier": "^0.22.0",
+    "prettier-eslint": "^6.2.3",
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "@cycle/dom": "^17.1.0",
+    "@cycle/run": "^3.1.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "daggy": "^1.0.0",
+    "fantasy-combinators": "^0.0.1",
+    "fantasy-frees": "^0.1.0",
+    "fantasy-land": "^3.3.0",
+    "fantasy-monoids": "https://github.com/fantasyland/fantasy-monoids",
+    "fantasy-writers": "^0.0.1",
+    "immutable": "^3.8.1",
+    "immutagen": "^1.0.7",
+    "jStat": "^1.5.3",
+    "most": "^1.2.2",
+    "ramda": "^0.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "seedrandom": "^2.4.2",
+    "snabbdom-jsx": "^0.3.1",
+    "xstream": "^10.5.0"
+  }
+}

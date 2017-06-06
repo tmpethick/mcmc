@@ -1,0 +1,29 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
+    "stage-0",
+    "flow"
+  ],
+  "plugins": [
+    "syntax-jsx",
+    [
+      "transform-react-jsx",
+      {
+        "pragma": "html"
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
+}

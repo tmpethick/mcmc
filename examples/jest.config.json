@@ -1,0 +1,10 @@
+{
+  "rootDir": "./",
+  "testMatch": [
+    "**/*.js"
+  ],
+  "testPathIgnorePatterns": [
+    "testdata/",
+    "utils/"
+  ]
+}
