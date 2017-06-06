@@ -3,6 +3,8 @@
 This is a proof of concept using ES6 Generators to implement a probabilistic programming language with a Free Monad.
 It is currently highly inefficient but is usable for smaller problems.
 
+Details can be found in [the paper describing the method](thesis.pdf).
+
 ## Usage
 
 An example program models the changepoint for number of British coal-mining disasters pulled from [Hierarchical Bayesian Analysis of Changepoint Problems](http://www.jstor.org/stable/2347570).
