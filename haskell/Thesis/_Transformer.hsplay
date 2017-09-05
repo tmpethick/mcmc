@@ -1,0 +1,8 @@
+-- Haskell Playground 1.0
+
+
+
+result1
+result2
+runState (runMaybeT program1) []
+runState (runMaybeT program2) [1, 2]

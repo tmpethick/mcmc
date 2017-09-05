@@ -1,0 +1,26 @@
+name: haskell
+version: 1.0
+cabal-version: 1.11
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 7.10.3-6.29-1
+x-last-ide-version: HfM1.4.0
+Executable haskell
+  main-is: Main.hs
+  buildable: True
+  build-depends:
+      free -any,
+      random -any,
+      mtl -any,
+      text -any,
+      transformers -any,
+      base -any,
+      containers -any
+  other-modules:
+      Thesis.Rejection
+      Thesis.Transformer
+      Thesis.Random
+      Thesis.Model
+      Thesis.FreeState
+      Thesis.Tele

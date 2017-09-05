@@ -1,0 +1,15 @@
+-- Haskell Playground 1.0
+
+
+
+
+result 
+data Pair a b = Pair { pairFst :: a, pairSnd :: b }
+
+newtype Maybe a = Maybe { runMaybe :: Int -> a }
+
+(runMaybe . Maybe $ (\_ -> 1)) (1)
+
+newtype Wrap a = Wrap { getWrap :: () -> a }
+
+getWrap $ Wrap (1, "a")

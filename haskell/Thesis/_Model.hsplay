@@ -1,0 +1,38 @@
+-- Haskell Playground 1.0
+
+distResult
+geoResult
+
+
+-- A data type holding our AST
+-- pass a function with the next distribution
+data ModelF next =
+      BernoulliF Double (Bool -> next)
+    | UniformF Double Double (Double -> next)
+
+-- 
+
+let p1 = BernoulliF 1.0 $ \a -> UniformF 1 2 $ \x -> ()
+
+
+liftFree :: Functor f => f a -> Free f a
+liftFree action = Free (fmap Return action)
+
+-- Using free
+
+let p1 = Free (BernoulliF 1.0 $ \a -> Free (UniformF 1 2 $ \x -> Pure ()))
+
+let p1 = Free (BernoulliF 1.0 Pure) >>= \a -> Free (UniformF 1 2 $ Pure)
+
+-- example
+let dist = do
+    b <- bernoulli 0.2
+    if b then uniform 0 5 else uniform 0 2 
+
+
+let contacts = [ ("Bob",   "01788 665242"),
+              ("Fred",  "01624 556442"),
+              ("Alice", "01889 985333"),
+              ("Jane",  "01732 187565") ]
+
+lookup "dan" contacts >>= \number -> 
